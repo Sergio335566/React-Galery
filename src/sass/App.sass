@@ -1,0 +1,38 @@
+.App
+    width: 100%
+    height: 100vh
+    background-color: black
+    .nav
+        display: flex
+        position: absolute
+        top: 0
+        width: 100%
+        text-align: center
+        justify-content: center
+        height: 40px
+        a
+            color: white
+            text-decoration: none
+            margin: 20px
+    .page-home, .page-about
+        justify-content: center
+        width: 100%
+        height: 100vh
+        display: flex
+        h1
+            color: white
+            font-size: 10rem
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+.fade-appear, .fade-enter
+    opacity: 0
+    z-index: 1
+    &-active
+        opacity: 1
+        transition: opacity 500ms ease-in 150ms
+.fade-exit
+    opacity: 1
+    &-active
+        opacity: 0
+        transition: opacity 300ms ease-in
