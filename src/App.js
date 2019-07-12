@@ -4,7 +4,7 @@ import { Transition, TransitionGroup } from 'react-transition-group';
 import { play, exit } from './timelines'
 import Nav from './Nav'
 import Home from './views/Home'
-import About from './views/About'
+import Artist1 from './views/Artist1'
 
 class App extends Component {
 
@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="app">
-          <Nav/>
+        <Nav/>
           <Route render={({ location }) => {
             const { pathname, key } = location;
 
@@ -27,7 +27,7 @@ class App extends Component {
                 >
                   <Switch location={location}>
                     <Route exact path="/" component={Home}/>
-                    <Route path="/about" component={About} />
+                    <Route path="/Artist1" component={Artist1} />
                   </Switch>
                 </Transition>
               </TransitionGroup>

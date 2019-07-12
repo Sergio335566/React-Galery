@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-class About extends Component {
+class Artist extends Component {
   render() {
     return (
       <div className="view">
-        <h1>About</h1>
+        <h1>Artist1</h1>
         <div className="content">
           <div className="content--inner">
             Application created to showcase multiple transitions in React projects, based on the route is entering. If you want to know more about this approach check these links below.
@@ -24,4 +24,4 @@ class About extends Component {
   }
 }
 
-export default About
+export default Artist
