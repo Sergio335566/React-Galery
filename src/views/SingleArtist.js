@@ -24,7 +24,7 @@ export default class SingleArtist extends Component {
                 // handle the result
                 result => {
                     let single = result.find(post => {
-                        return post.userId;
+                        return post.id;
                     });
 
                     this.setState({

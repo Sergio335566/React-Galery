@@ -42,7 +42,7 @@ class Artist extends Component {
                             {posts.map(post => (
                                 <li key={post.id} align="center" className={post.id}>
                                     <div>
-                                        <Link to={`/artist/${post.userId}`}>
+                                        <Link to={`/artist/${post.id}`}>
                                             <h1 key={post.userId}>Artiste {post.userId}</h1>
                                         </Link>
                                     </div>
