@@ -1,0 +1,28 @@
+.container-name
+    height: 100vh
+    text-align: center
+    width: 100%
+    h1
+        font-size: 15rem
+        left: 50%
+        position: absolute
+        top: 50%
+        transform: translate(-50%, -50%)
+.container-images
+    cursor: none
+    height: 500px
+    left: 50%
+    position: absolute
+    top: 50%
+    transform: translate(-50%, -50%)
+    user-select: none
+    width: 500px
+    z-index: 1
+    @media screen and (max-width: 480px)
+        height: 250px
+        width: 250px
+    img
+        height: 100%
+        object-fit: contain
+        position: absolute
+        width: 100%

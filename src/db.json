@@ -1,26 +1,75 @@
 {
-    "1": {
-        "id": "1",
-        "name": "Bernard Calves"
-    },
-    "2": {
-        "id": "2",
-        "name": "Françoise Hardy"
-    },
-    "3": {
-        "id": "3",
-        "name": "Jean pierre"
-    },
-    "4": {
-        "id": "1",
-        "name": "Bernardo Heru"
-    },
-    "5": {
-        "id": "2",
-        "name": "Frank Charles"
-    },
-    "6": {
-        "id": "3",
-        "name": "Michel Carles"
-    }
+  "artists": [
+      {
+            "id": "1",
+            "name": "Bernard Calves",
+            "images": {
+                     "1": {
+                           "id": "1",
+                           "url": "./img_1.jpg"
+                      },
+                     "2": {
+                           "id": "2",
+                           "url": "./img_2.jpg"
+                      }
+            }
+        },
+        {
+            "id": "2",
+            "name": "Françoise Hardy",
+            "images": {
+                     "1": {
+                           "id": "1",
+                           "url": "./img_3.jpg"
+                      },
+                     "2": {
+                           "id": "2",
+                           "url": "./img_4.jpg"
+                      }
+            }
+        },
+        {
+            "id": "3",
+            "name": "Jean pierre",
+            "images": {
+                     "1": {
+                           "id": "1",
+                           "url": "./img_5.jpg"
+                      },
+                     "2": {
+                           "id": "2",
+                           "url": "./img_6.jpg"
+                      }
+            }
+        },
+        {
+            "id": "4",
+            "name": "Bernardo Heru",
+            "images": {
+                     "1": {
+                           "id": "1",
+                           "url": "./img_7.jpg"
+                      },
+                     "2": {
+                           "id": "2",
+                           "url": "./img_8.jpg"
+                      }
+            }
+        },
+        {
+            "id": "5",
+            "name": "Frank Charles",
+            "images": {
+                     "1": {
+                           "id": "1",
+                           "url": "./img_9.jpg"
+                      },
+                     "2": {
+                           "id": "2",
+                           "url": "./img_10.jpg"
+                      }
+            }
+        }
+    ]
+
 }

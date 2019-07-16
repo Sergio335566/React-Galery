@@ -4,7 +4,7 @@ import { Transition, TransitionGroup } from 'react-transition-group';
 import { play, exit } from './timelines';
 import Artists from './components/Artists'
 import SingleArtist from './components/SingleArtist'
-import artists from './db.json'
+import bdd from './db.json'
 
         export default class App extends Component {
             render() {
@@ -25,10 +25,10 @@ import artists from './db.json'
                                             timeout={{ enter: 750, exit: 150 }}>
                                             <Switch location={location}>
                                                 <Route exact path='/' render={ routerProps => {
-                                                    return  <Artists {...routerProps} artists={artists} /> }
+                                                    return  <Artists {...routerProps} artists={bdd.artists} /> }
                                                 }></Route>
                                                 <Route path={`/:id`} render={ routerProps=> {
-                                                    return <SingleArtist {...routerProps} artists={artists} /> }
+                                                    return <SingleArtist {...routerProps} artists={bdd.artists} /> }
                                                 } />
                                             </Switch>
                                         </Transition>

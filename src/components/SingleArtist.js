@@ -1,15 +1,31 @@
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
+import init from '../animations/cursor'
 export default class Artists extends Component {
     render () {
         const { match, artists } = this.props;
+        const artist = artists[match.params.id];
+        const pathToAssets = require.context('../images/');
+        
         return (
-            <div className='contenu'>
-            <div className="content">
-               <div className="content--inner">
-                    <h1>{artists[match.params.id].name}</h1>
-                    <h2>Hello, je suis {artists[match.params.id].name} </h2>
-              </div>
+
+            <div className='container js-container'>
+                <div className="content">
+                   <div className="content--inner">
+                   <div className="container-name">
+                        <h1>{artist.name}</h1>
+                    </div>
+                    <div className="navigation js-navigation">
+                        <div className="navigation-left js-left"></div>
+                        <div className="navigation-right js-right"></div>
+                     </div>
+                        <div className="container-images">
+                            { Object.values(artist.images).map((image, i)=> {
+                                return (
+                                    <img key={i} src={pathToAssets(image.url)}/>
+                                )
+                            }) }
+                    </div>
+                  </div>
             </div>
         </div>
         )
