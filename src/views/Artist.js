@@ -1,61 +1,61 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Artist extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            error : null,
-            isLoaded : false,
-            posts : []
+            error: null,
+            isLoaded: false,
+            posts: []
         };
     }
-    componentDidMount(){
+    componentDidMount() {
         // I will use fake api from jsonplaceholder website
         // this return 100 posts
-        fetch("https://jsonplaceholder.typicode.com/posts")
-        .then( response => response.json())
-        .then(
-            // handle the result
-            (result) => {
-                this.setState({
-                    isLoaded : true,
-                    posts : result
-                });
-            },
-            // Handle error
-            (error) => {
-                this.setState({
-                    isLoaded: true,
-                    error
-                })
-            },
-        )
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(response => response.json())
+            .then(
+                // handle the result
+                result => {
+                    this.setState({
+                        isLoaded: true,
+                        posts: result
+                    });
+                },
+                // Handle error
+                error => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+                }
+            );
     }
-  render() {
-    const {error, isLoaded, posts} = this.state;
-    return (
-      <div className="view">
-        <div className="content">
-          <div className="content--inner">
-          <ol className="item">
-                                 {
-                                     posts.map(post => (
-                                         <li key={post.id} align="center" className={post.id}>
-                                             <div>
-                                                 <h1 key={post.userId}>Artiste {post.userId}</h1>
-                                             </div>
-                                         </li>
-                                     ))
-                                 }
-                                 </ol>
-          </div>
-        </div>
-      </div>
-    );
-  }
+    render() {
+        const { error, isLoaded, posts } = this.state;
+        return (
+            <div className="view">
+                <div className="content">
+                    <div className="content--inner">
+                        <ol className="item">
+                            {posts.map(post => (
+                                <li key={post.id} align="center" className={post.id}>
+                                    <div>
+                                        <Link to={`/artist/${post.userId}`}>
+                                            <h1 key={post.userId}>Artiste {post.userId}</h1>
+                                        </Link>
+                                    </div>
+                                </li>
+                            ))}
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 }
-export default Artist
-
+export default Artist;
 
 // class Artist extends Component {
 //     constructor(props){
