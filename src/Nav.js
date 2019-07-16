@@ -1,13 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Artist from './views/Artist'
 
+console.log(Artist)
 const routes = [
   { to: '/', label: 'Home' },
-  { to: '/Artist1', label: 'Artist1' },
-  { to: '/Artist2', label: 'Artist2' },
-  { to: '/Artist3', label: 'Artist3' },
-  { to: '/Artist4', label: 'Artist4' },
-  { to: '/Artist5', label: 'Artist5' }
+  { to: '/Artist', label: 'Artist' }
 ];
 
 const Nav = () => {
