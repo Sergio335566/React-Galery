@@ -6,12 +6,19 @@
             "images": {
                      "1": {
                            "id": "1",
-                           "url": "./img_1.jpg"
+                           "url": "./img_1.jpg",
+                           "dataName": "ROOM"
                       },
                      "2": {
                            "id": "2",
-                           "url": "./img_2.jpg"
-                      }
+                           "url": "./img_2.jpg",
+                           "dataName": "GRAIN"
+                      },
+                      "3": {
+                            "id": "3",
+                            "url": "./img_3.jpg",
+                            "dataName": "POINT"
+                       }
             }
         },
         {
@@ -20,11 +27,13 @@
             "images": {
                      "1": {
                            "id": "1",
-                           "url": "./img_3.jpg"
+                           "url": "./img_3.jpg",
+                           "dataName": "POINT"
                       },
                      "2": {
                            "id": "2",
-                           "url": "./img_4.jpg"
+                           "url": "./img_4.jpg",
+                           "dataName": "HOME"
                       }
             }
         },
@@ -34,11 +43,14 @@
             "images": {
                      "1": {
                            "id": "1",
-                           "url": "./img_5.jpg"
+                           "url": "./img_5.jpg",
+                           "dataName": "KYLIE"
                       },
                      "2": {
                            "id": "2",
-                           "url": "./img_6.jpg"
+                           "url": "./img_6.jpg",
+                           "dataName": "GRAIN 2"
+
                       }
             }
         },
@@ -48,11 +60,13 @@
             "images": {
                      "1": {
                            "id": "1",
-                           "url": "./img_7.jpg"
+                           "url": "./img_7.jpg",
+                           "dataName": "MLDV"
                       },
                      "2": {
                            "id": "2",
-                           "url": "./img_8.jpg"
+                           "url": "./img_8.jpg",
+                           "dataName": "WATER"
                       }
             }
         },
@@ -62,11 +76,13 @@
             "images": {
                      "1": {
                            "id": "1",
-                           "url": "./img_9.jpg"
+                           "url": "./img_9.jpg",
+                           "dataName": "STAIRS"
                       },
                      "2": {
                            "id": "2",
-                           "url": "./img_10.jpg"
+                           "url": "./img_10.jpg",
+                           "dataName": "POINT 2"
                       }
             }
         }

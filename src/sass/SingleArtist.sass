@@ -9,20 +9,34 @@
         top: 50%
         transform: translate(-50%, -50%)
 .container-images
-    cursor: none
-    height: 500px
+    height: 100vh
     left: 50%
     position: absolute
-    top: 50%
-    transform: translate(-50%, -50%)
-    user-select: none
-    width: 500px
-    z-index: 1
-    @media screen and (max-width: 480px)
-        height: 250px
-        width: 250px
-    img
-        height: 100%
-        object-fit: contain
+    top: 0
+    &-single
+        cursor: none
+        height: 500px
+        left: 50%
         position: absolute
-        width: 100%
+        top: 50%
+        transform: translate(-50%, -50%)
+        user-select: none
+        width: 500px
+        z-index: 1
+        @media screen and (max-width: 480px)
+            height: 250px
+            width: 250px
+        img
+            height: 100%
+            object-fit: contain
+            opacity: 0
+            position: absolute
+            width: 100%
+        .image-name
+            bottom: 20px
+            display: flex
+            justify-content: center
+            position: absolute
+            user-select: none
+            width: 100%
+            z-index: 99

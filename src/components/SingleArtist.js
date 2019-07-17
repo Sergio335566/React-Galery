@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import init from '../animations/cursor'
-export default class Artists extends Component {
+import Cursor from '../animations/cursor'
+export default class SingleArtist extends Component {
+     componentDidMount() {
+         const container = document.querySelector('.js-container');
+         this.cursorInstance = new Cursor(container);
+     }
     render () {
         const { match, artists } = this.props;
         const artist = artists[match.params.id];
         const pathToAssets = require.context('../images/');
-        
         return (
 
             <div className='container js-container'>
@@ -21,10 +24,16 @@ export default class Artists extends Component {
                         <div className="container-images">
                             { Object.values(artist.images).map((image, i)=> {
                                 return (
-                                    <img key={i} src={pathToAssets(image.url)}/>
+                                <div key={i} className="container-images-single">
+                                    <img src={pathToAssets(image.url)} data-name={image.dataName}/>
+                                </div>
                                 )
                             }) }
+                            <div className="image-name js-image-name">
+                                <h2></h2>
+                            </div>
                     </div>
+                    <div className="navigation-cursor js-cursor"></div>
                   </div>
             </div>
         </div>

@@ -1,0 +1,26 @@
+.navigation
+    display: flex
+    height: 100vh
+    width: 100%
+    cursor: none
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 2
+    &-left
+        width: 50%
+    &-right
+        width: 50%
+    &-cursor
+        background-size: contain
+        background-repeat: no-repeat
+        width: 150px
+        height: 120px
+        position: absolute
+        pointer-events: none
+        top: -10%
+        cursor: none
+        left: -5%
+        z-index: 3
+        &.hidden
+            display: none
