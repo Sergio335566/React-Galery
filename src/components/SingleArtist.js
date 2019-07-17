@@ -4,7 +4,8 @@ import Cursor from '../animations/cursor'
 export default class SingleArtist extends Component {
      componentDidMount() {
          const container = document.querySelector('.js-container');
-         this.cursorInstance = new Cursor(container);
+         const pathName = window.location.pathname;
+         this.cursorInstance = new Cursor(container, pathName);
      }
     render () {
         const { match, artists } = this.props;
@@ -16,27 +17,27 @@ export default class SingleArtist extends Component {
                 <div className="home js-home"><NavLink to={`/`}>home</NavLink></div>
                 <div className="content">
                    <div className="content--inner">
-                   <div className="container-name">
-                        <h1>{artist.name}</h1>
-                    </div>
-                    <div className="navigation js-navigation">
-                        <div className="navigation-left js-left"></div>
-                        <div className="navigation-right js-right"></div>
-                     </div>
+                       <div className="container-name">
+                            <h1>{artist.name}</h1>
+                        </div>
+                        <div className="navigation js-navigation">
+                            <div className="navigation-left js-left"></div>
+                            <div className="navigation-right js-right"></div>
+                        </div>
                         <div className="container-images">
                             { Object.values(artist.images).map((image, i)=> {
                                 return (
-                                <div key={i} className="container-images-single">
-                                    <img src={pathToAssets(image.url)} data-name={image.dataName}/>
-                                </div>
+                                    <div key={i} className="container-images-single">
+                                        <img src={pathToAssets(image.url)} data-name={image.dataName}/>
+                                    </div>
                                 )
                             }) }
                             <div className="image-name js-image-name">
                                 <h2></h2>
                             </div>
                     </div>
-                    <div className="navigation-cursor js-cursor"></div>
-                  </div>
+                        <div className="navigation-cursor js-cursor"></div>
+                      </div>
             </div>
         </div>
         )

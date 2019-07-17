@@ -25,7 +25,7 @@ const getHomeTimeline = (node, delay) => {
 export const play = (pathname, node, appears) => {
     const delay = appears ? 0 : 0.5;
     let timeline;
-
+    console.log(pathname)
     if (pathname === '/') timeline = getHomeTimeline(node, delay);
     else timeline = getDefaultTimeline(node, delay);
     window.loadPromise.then(() => requestAnimationFrame(() => timeline.play()));

@@ -1,26 +1,28 @@
 .navigation
+    cursor: none
     display: flex
     height: 100vh
-    width: 100%
-    cursor: none
+    left: 0
     position: absolute
     top: 0
-    left: 0
+    width: 100%
     z-index: 2
     &-left
         width: 50%
+        z-index: 999
     &-right
         width: 50%
+        z-index: 999
     &-cursor
-        background-size: contain
         background-repeat: no-repeat
-        width: 150px
-        height: 120px
-        position: absolute
-        pointer-events: none
-        top: -10%
+        background-size: contain
         cursor: none
+        height: 120px
         left: -5%
+        pointer-events: none
+        position: absolute
+        top: -10%
+        width: 150px
         z-index: 3
         &.hidden
             display: none

@@ -1,28 +1,33 @@
 import { TweenMax, TimelineMax as Timeline } from 'gsap';
 export default class Cursor {
-    constructor(containerEl) {
+    constructor(containerEl, pathName) {
         this.container = containerEl;
+        this.pathname = pathName;
         this.init();
     }
     init() {
+        console.log(this.container)
         this.navigation = this.container.querySelector('.js-navigation');
-        this.nameContainer = this.container.querySelector('.js-names');
-        this.leftContainer = this.navigation.querySelector('.js-left');
-        this.rightContainer = this.navigation.querySelector('.js-right');
         this.cursor = this.container.querySelector('.js-cursor');
         this.images = this.container.querySelectorAll('.container-images img');
         this.imageName = this.container.querySelector('.js-image-name h2');
         this.home = this.container.querySelector('.js-home');
+        this.nameContainer = this.container.querySelector('.js-names');
+        this.leftContainer = this.navigation.querySelector('.js-left');
+        this.rightContainer = this.navigation.querySelector('.js-right');
         this.indexLength = this.images.length;
+        this.correctPathName = this.pathname === '/';
         this.index = 0;
         this.images[0].style.opacity = "1";
         this.imageName.innerHTML = this.images[0].getAttribute('data-name');
         this.initListeners();
     }
     initListeners() {
+        if (!this.correctPathName) {
+            this.home.addEventListener('mouseenter', this.textHover.bind(this));
+            this.home.addEventListener('mouseout', this.textHover.bind(this));
+        }
         this.container.addEventListener('mousemove', this.cursorMove.bind(this));
-        this.home.addEventListener('mouseenter', this.textHover.bind(this));
-        this.home.addEventListener('mouseout', this.textHover.bind(this));
         this.leftContainer.addEventListener('mousemove', this.nextCursor.bind(this, false));
         this.leftContainer.addEventListener('click', this.displayImages.bind(this, false));
         this.rightContainer.addEventListener('mousemove', this.nextCursor.bind(this, true));

@@ -4,7 +4,7 @@ import { Transition, TransitionGroup } from 'react-transition-group';
 import { play, exit } from './timelines';
 import Artists from './components/Artists'
 import SingleArtist from './components/SingleArtist'
-import bdd from './db.json'
+import bdd from './artists.json'
 
         export default class App extends Component {
             render() {
