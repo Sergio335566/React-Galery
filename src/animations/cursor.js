@@ -1,10 +1,9 @@
-import { TweenMax, TimelineMax as Timeline, Power1 } from 'gsap';
+import { TweenMax, TimelineMax as Timeline } from 'gsap';
 export default class Cursor {
     constructor(containerEl) {
         this.container = containerEl;
         this.init();
     }
-
     init() {
         this.navigation = this.container.querySelector('.js-navigation');
         this.nameContainer = this.container.querySelector('.js-names');
@@ -12,7 +11,8 @@ export default class Cursor {
         this.rightContainer = this.navigation.querySelector('.js-right');
         this.cursor = this.container.querySelector('.js-cursor');
         this.images = this.container.querySelectorAll('.container-images img');
-        this.imageName = this.container.querySelector('.js-image-name h2')
+        this.imageName = this.container.querySelector('.js-image-name h2');
+        this.home = this.container.querySelector('.js-home');
         this.indexLength = this.images.length;
         this.index = 0;
         this.images[0].style.opacity = "1";
@@ -21,6 +21,8 @@ export default class Cursor {
     }
     initListeners() {
         this.container.addEventListener('mousemove', this.cursorMove.bind(this));
+        this.home.addEventListener('mouseenter', this.textHover.bind(this));
+        this.home.addEventListener('mouseout', this.textHover.bind(this));
         this.leftContainer.addEventListener('mousemove', this.nextCursor.bind(this, false));
         this.leftContainer.addEventListener('click', this.displayImages.bind(this, false));
         this.rightContainer.addEventListener('mousemove', this.nextCursor.bind(this, true));
@@ -33,7 +35,6 @@ export default class Cursor {
         this.cursor.style.transform = 'translate3D(' + this.mouseX + 'px,' + this.mouseY + 'px, 0px)';
     }
     changeName(sens) {
-        'use strict';
         this.clicked = false;
         this.images[this.index].style.opacity = "0";
         this.images[this.newIndex].style.opacity = "1";
@@ -72,5 +73,12 @@ export default class Cursor {
           this.nextImage = 0;
         }
         this.cursor.style.backgroundImage = "url(" + this.images[this.nextImage].currentSrc + ")";
+    }
+    textHover(event) {
+        if (event.type === 'mouseenter') {
+            this.cursor.classList.add('hidden');
+        } else {
+            this.cursor.classList.remove('hidden');
+        }
     }
 }

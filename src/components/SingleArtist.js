@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import Cursor from '../animations/cursor'
 export default class SingleArtist extends Component {
      componentDidMount() {
@@ -11,7 +12,8 @@ export default class SingleArtist extends Component {
         const pathToAssets = require.context('../images/');
         return (
 
-            <div className='container js-container'>
+            <div className="container js-container">
+                <div className="home js-home"><NavLink to={`/`}>home</NavLink></div>
                 <div className="content">
                    <div className="content--inner">
                    <div className="container-name">
