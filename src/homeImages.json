@@ -1,42 +1,42 @@
 [
   {
      "id": "1",
-     "url": "./img_1.jpg",
+     "url": "./jonah/img_1.jpg",
      "dataName": "ROOM"
   },
   {
      "id": "2",
-     "url": "./img_2.jpg",
+     "url": "./sekou/img_2.jpg",
      "dataName": "GRAIN"
   },
   {
      "id": "3",
-     "url": "./img_3.jpg",
+     "url": "./jonah/img_3.jpg",
      "dataName": "GRAIN"
   },
   {
      "id": "4",
-     "url": "./img_4.jpg",
+     "url": "./sekou/img_4.jpg",
      "dataName": "GRAIN"
   },
   {
      "id": "5",
-     "url": "./img_5.jpg",
+     "url": "./jonah/img_5.jpg",
      "dataName": "GRAIN"
   },
   {
      "id": "6",
-     "url": "./img_6.jpg",
+     "url": "./sekou/img_6.jpg",
      "dataName": "GRAIN"
   },
   {
      "id": "7",
-     "url": "./img_7.jpg",
+     "url": "./jonah/img_7.jpg",
      "dataName": "GRAIN"
   },
   {
      "id": "8",
-     "url": "./img_8.jpg",
+     "url": "./sekou/img_8.jpg",
      "dataName": "GRAIN"
   }
 ]

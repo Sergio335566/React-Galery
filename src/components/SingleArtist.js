@@ -10,7 +10,7 @@ export default class SingleArtist extends Component {
     render () {
         const { match, artists } = this.props;
         const artist = artists[match.params.id];
-        const pathToAssets = require.context('../images/');
+        const pathToAssets = require.context('../images/', true);
         return (
 
             <div className="container js-container">
@@ -28,7 +28,7 @@ export default class SingleArtist extends Component {
                             { Object.values(artist.images).map((image, i)=> {
                                 return (
                                     <div key={i} className="container-images-single">
-                                        <img src={pathToAssets(image.url)} data-name={image.dataName}/>
+                                        <img src={pathToAssets(`./${artist.folderName}/${image.url}`)} data-name={image.id}/>
                                     </div>
                                 )
                             }) }

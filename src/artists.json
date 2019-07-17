@@ -2,39 +2,266 @@
   "artists": [
       {
             "id": "1",
-            "name": "Bernard Calves",
+            "name": "Jonah Alle Monne",
+            "folderName": "jonah",
             "images": {
-                     "1": {
-                           "id": "1",
-                           "url": "./img_1.jpg",
-                           "dataName": "ROOM"
-                      },
-                     "2": {
-                           "id": "2",
-                           "url": "./img_2.jpg",
-                           "dataName": "GRAIN"
-                      },
-                      "3": {
-                            "id": "3",
-                            "url": "./img_3.jpg",
-                            "dataName": "POINT"
-                       }
+                    "1": {
+                        "id": "1",
+                        "url": "img_1.jpg",
+                        "dataName": "ROOM"
+                    },
+                    "2": {
+                        "id": "2",
+                        "url": "img_2.jpg",
+                        "dataName": "GRAIN"
+                    },
+                    "3": {
+                        "id": "3",
+                        "url": "img_3.jpg",
+                        "dataName": "POINT"
+                    },
+                    "4": {
+                        "id": "4",
+                        "url": "img_4.jpg",
+                        "dataName": "ROOM"
+                    },
+                    "5": {
+                        "id": "5",
+                        "url": "img_5.jpg",
+                        "dataName": "GRAIN"
+                    },
+                    "6": {
+                        "id": "6",
+                        "url": "img_6.jpg",
+                        "dataName": "POINT"
+                    },
+                    "7": {
+                        "id": "7",
+                        "url": "img_7.jpg",
+                        "dataName": "ROOM"
+                    },
+                    "8": {
+                        "id": "8",
+                        "url": "img_8.jpg",
+                        "dataName": "GRAIN"
+                    },
+                    "9": {
+                        "id": "9",
+                        "url": "img_9.jpg",
+                        "dataName": "POINT"
+                    },
+                    "10": {
+                        "id": "10",
+                        "url": "img_10.jpg",
+                        "dataName": "ROOM"
+                    },
+                    "11": {
+                        "id": "11",
+                        "url": "img_11.jpg",
+                        "dataName": "GRAIN"
+                    },
+                    "12": {
+                        "id": "12",
+                        "url": "img_12.jpg",
+                        "dataName": "POINT"
+                    },
+                    "13": {
+                        "id": "13",
+                        "url": "img_13.jpg",
+                        "dataName": "POINT"
+                    },
+                    "14": {
+                        "id": "14",
+                        "url": "img_14.jpg",
+                        "dataName": "POINT"
+                    },
+                    "15": {
+                        "id": "15",
+                        "url": "img_15.jpg",
+                        "dataName": "POINT"
+                    },
+                    "16": {
+                        "id": "16",
+                        "url": "img_16.jpg",
+                        "dataName": "POINT"
+                    },
+                    "17": {
+                        "id": "17",
+                        "url": "img_17.jpg",
+                        "dataName": "POINT"
+                    },
+                    "18": {
+                        "id": "18",
+                        "url": "img_18.jpg",
+                        "dataName": "POINT"
+                    },
+                    "19": {
+                        "id": "19",
+                        "url": "img_19.jpg",
+                        "dataName": "POINT"
+                    },
+                    "20": {
+                        "id": "20",
+                        "url": "img_20.jpg",
+                        "dataName": "POINT"
+                    },
+                    "21": {
+                        "id": "21",
+                        "url": "img_21.jpg",
+                        "dataName": "POINT"
+                    },
+                    "22": {
+                        "id": "22",
+                        "url": "img_22.jpg",
+                        "dataName": "POINT"
+                    },
+                    "23": {
+                        "id": "23",
+                        "url": "img_23.jpg",
+                        "dataName": "POINT"
+                    },
+                    "24": {
+                        "id": "24",
+                        "url": "img_24.jpg",
+                        "dataName": "POINT"
+                    },
+                    "25": {
+                        "id": "25",
+                        "url": "img_25.jpg",
+                        "dataName": "POINT"
+                    }
             }
         },
         {
             "id": "2",
-            "name": "Françoise Hardy",
+            "name": "Sekou Camara",
+            "folderName": "sekou",
             "images": {
-                     "1": {
-                           "id": "1",
-                           "url": "./img_3.jpg",
-                           "dataName": "POINT"
-                      },
-                     "2": {
-                           "id": "2",
-                           "url": "./img_4.jpg",
-                           "dataName": "HOME"
-                      }
+                    "1": {
+                        "id": "1",
+                        "url": "img_1.jpg",
+                        "dataName": "ROOM"
+                    },
+                    "2": {
+                        "id": "2",
+                        "url": "img_2.jpg",
+                        "dataName": "GRAIN"
+                    },
+                    "3": {
+                        "id": "3",
+                        "url": "img_3.jpg",
+                        "dataName": "POINT"
+                    },
+                    "4": {
+                        "id": "4",
+                        "url": "img_4.jpg",
+                        "dataName": "ROOM"
+                    },
+                    "5": {
+                        "id": "5",
+                        "url": "img_5.jpg",
+                        "dataName": "GRAIN"
+                    },
+                    "6": {
+                        "id": "6",
+                        "url": "img_6.jpg",
+                        "dataName": "POINT"
+                    },
+                    "7": {
+                        "id": "7",
+                        "url": "img_7.jpg",
+                        "dataName": "ROOM"
+                    },
+                    "8": {
+                        "id": "8",
+                        "url": "img_8.jpg",
+                        "dataName": "GRAIN"
+                    },
+                    "9": {
+                        "id": "9",
+                        "url": "img_9.jpg",
+                        "dataName": "POINT"
+                    },
+                    "10": {
+                        "id": "10",
+                        "url": "img_10.jpg",
+                        "dataName": "ROOM"
+                    },
+                    "11": {
+                        "id": "11",
+                        "url": "img_11.jpg",
+                        "dataName": "GRAIN"
+                    },
+                    "12": {
+                        "id": "12",
+                        "url": "img_12.jpg",
+                        "dataName": "POINT"
+                    },
+                    "13": {
+                        "id": "13",
+                        "url": "img_13.jpg",
+                        "dataName": "POINT"
+                    },
+                    "14": {
+                        "id": "14",
+                        "url": "img_14.jpg",
+                        "dataName": "POINT"
+                    },
+                    "15": {
+                        "id": "15",
+                        "url": "img_15.jpg",
+                        "dataName": "POINT"
+                    },
+                    "16": {
+                        "id": "16",
+                        "url": "img_16.jpg",
+                        "dataName": "POINT"
+                    },
+                    "17": {
+                        "id": "17",
+                        "url": "img_17.jpg",
+                        "dataName": "POINT"
+                    },
+                    "18": {
+                        "id": "18",
+                        "url": "img_18.jpg",
+                        "dataName": "POINT"
+                    },
+                    "19": {
+                        "id": "19",
+                        "url": "img_19.jpg",
+                        "dataName": "POINT"
+                    },
+                    "20": {
+                        "id": "20",
+                        "url": "img_20.jpg",
+                        "dataName": "POINT"
+                    },
+                    "21": {
+                        "id": "21",
+                        "url": "img_21.jpg",
+                        "dataName": "POINT"
+                    },
+                    "22": {
+                        "id": "22",
+                        "url": "img_22.jpg",
+                        "dataName": "POINT"
+                    },
+                    "23": {
+                        "id": "23",
+                        "url": "img_23.jpg",
+                        "dataName": "POINT"
+                    },
+                    "24": {
+                        "id": "24",
+                        "url": "img_24.jpg",
+                        "dataName": "POINT"
+                    },
+                    "25": {
+                        "id": "25",
+                        "url": "img_25.jpg",
+                        "dataName": "POINT"
+                    }
             }
         },
         {
@@ -43,12 +270,12 @@
             "images": {
                      "1": {
                            "id": "1",
-                           "url": "./img_5.jpg",
+                           "url": "img_5.jpg",
                            "dataName": "KYLIE"
                       },
                      "2": {
                            "id": "2",
-                           "url": "./img_6.jpg",
+                           "url": "img_6.jpg",
                            "dataName": "GRAIN 2"
 
                       }
@@ -60,12 +287,12 @@
             "images": {
                      "1": {
                            "id": "1",
-                           "url": "./img_7.jpg",
+                           "url": "img_7.jpg",
                            "dataName": "MLDV"
                       },
                      "2": {
                            "id": "2",
-                           "url": "./img_8.jpg",
+                           "url": "img_8.jpg",
                            "dataName": "WATER"
                       }
             }
@@ -76,12 +303,12 @@
             "images": {
                      "1": {
                            "id": "1",
-                           "url": "./img_9.jpg",
+                           "url": "img_9.jpg",
                            "dataName": "STAIRS"
                       },
                      "2": {
                            "id": "2",
-                           "url": "./img_10.jpg",
+                           "url": "img_10.jpg",
                            "dataName": "POINT 2"
                       }
             }
