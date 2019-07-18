@@ -18,6 +18,9 @@
         user-select: none
         width: 100%
         z-index: 4
+        @media screen and (max-width:480px)
+            font-size: 10px
+            text-align: center
         h3
             cursor: pointer
             padding: 20px
@@ -45,6 +48,9 @@
             @media screen and (max-width: 480px)
                 height: 250px
                 width: 250px
+            @media screen and (min-width: 1280px)
+                height: 800px
+                width: 800px
             img
                 height: 100%
                 object-fit: contain
