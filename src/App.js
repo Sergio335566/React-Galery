@@ -21,8 +21,8 @@ import bdd from './artists.json'
                                             key={key}
                                             appear={true}
                                             onEnter={(node, appears) => play(pathname, node, appears)}
-                                            onExit={(node, appears) => exit(node, appears)}
-                                            timeout={{ enter: 75000, exit: 75000 }}>
+                                            onExit={(node, appears) => exit(pathname, node, appears)}
+                                            timeout={{ enter: 750, exit: 1500 }}>
                                             <Switch location={location}>
                                                 <Route exact path='/' render={ routerProps => {
                                                     return  <Artists {...routerProps} artists={bdd.artists} /> }

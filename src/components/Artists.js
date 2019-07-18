@@ -4,7 +4,7 @@ import Cursor from '../animations/cursor'
 import images from '../homeImages.json'
 export default class Artists extends Component {
     componentDidMount() {
-        const container = document.querySelector('.js-container');
+        const container = this.refs.jscontainer;
         const pathName = window.location.pathname;
         this.cursorInstance = new Cursor(container, pathName);
     }
@@ -12,7 +12,7 @@ export default class Artists extends Component {
         const { artists } = this.props;
         const pathToAssets = require.context('../images/');
         return (
-            <div className="container js-container">
+            <div ref='jscontainer' className="container js-container">
                 <div className="content">
                    <div className="content--inner">
                        <div className="navigation js-navigation">

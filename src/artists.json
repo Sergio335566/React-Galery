@@ -267,6 +267,7 @@
         {
             "id": "3",
             "name": "Jean pierre",
+            "folderName": "sekou",
             "images": {
                      "1": {
                            "id": "1",
@@ -284,6 +285,7 @@
         {
             "id": "4",
             "name": "Bernardo Heru",
+            "folderName": "sekou",
             "images": {
                      "1": {
                            "id": "1",
@@ -300,6 +302,7 @@
         {
             "id": "5",
             "name": "Frank Charles",
+            "folderName": "sekou",
             "images": {
                      "1": {
                            "id": "1",

@@ -3,6 +3,7 @@ export default class Cursor {
     constructor(containerEl, pathName) {
         this.container = containerEl;
         this.pathname = pathName;
+        console.log(this.container)
         this.init();
     }
     init() {
