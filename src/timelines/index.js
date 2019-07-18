@@ -17,7 +17,7 @@ const getDefaultTimeline = (node, delay) => {
             .from(contentInner, 0.15, { autoAlpha: 1, ease: Power1.easeIn })
             .from(home, 0.4, {display: 'none', autoAlpha: 0})
             .from(images, 0.4, { autoAlpha: 0, ease: Power1.easeIn })
-            .from(imageName, 0.3, { y: 35, autoAlpha: 0, ease: Power3.easeOut });
+            .from(imageName, 0.3, { y: 35, autoAlpha: 0, ease: Power3.easeOut })
     }
     return timeline;
 };
@@ -52,6 +52,7 @@ export const exit = (pathname, node) => {
     let imageName = node.querySelector('.container-images .image-name');
     if (pathname === "/") {
         timeline.to(images, 1, { autoAlpha: 0, ease: Power1.easeOut }, 1)
+
     } else{
         timeline.to(images, 0.2, { autoAlpha: 0, ease: Power1.easeIn })
                 .to(home, 0.4, { autoAlpha: 0})
@@ -68,6 +69,5 @@ const mouseMove = (texts, i, title) => {
         .to(texts, 0.1, {autoAlpha: 0})
         .to(texts, 0.2, {position: 'absolute'})
         .to(texts[i], 0.7, {position: 'absolute', autoAlpha: 1, display: "block", x: '-50%', left:'50%', ease: Power1.easeOut})
-        .to(texts[i], 0.3, {fontSize: '2rem', ease: Power1.easeOut})
         .to(texts[i], 0.3, {x: '-50%', ease: Power3.easeIn })
 }
