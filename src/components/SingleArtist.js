@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Cursor from '../animations/cursor'
 export default class SingleArtist extends Component {
      componentDidMount() {
-         const container = document.querySelector('.js-container');
+         const container = this.refs.jscontainer;
          const pathName = window.location.pathname;
          this.cursorInstance = new Cursor(container, pathName);
      }
@@ -13,7 +13,7 @@ export default class SingleArtist extends Component {
         const pathToAssets = require.context('../images/', true);
         return (
 
-            <div className="container js-container">
+            <div ref='jscontainer' className="container js-container">
                 <div className="home js-home"><NavLink to={`/`}>home</NavLink></div>
                 <div className="content">
                    <div className="content--inner">

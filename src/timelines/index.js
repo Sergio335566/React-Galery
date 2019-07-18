@@ -3,11 +3,11 @@ import { TimelineMax as Timeline, Power1, Power3 } from 'gsap';
 const getDefaultTimeline = (node, delay) => {
     const timeline = new Timeline({ paused: true });
     const content = node.querySelector('.content');
-    const h1 = node.querySelector('h1');
+    let h1 = node.querySelector('h1');
     let images = node.querySelectorAll('.container-images .container-images-single');
     let imageName = node.querySelector('.container-images .image-name');
     let home = node.querySelector('.js-home');
-    const contentInner = node.querySelector('.content--inner');
+    let contentInner = node.querySelector('.content--inner');
 
     if (content && contentInner) {
         timeline
@@ -25,7 +25,7 @@ const getDefaultTimeline = (node, delay) => {
 const getHomeTimeline = (node, delay) => {
     const timeline = new Timeline({ paused: false });
     let images = node.querySelectorAll('.container-images .container-images-single');
-    const texts = node.querySelectorAll('h3');
+    let texts = node.querySelectorAll('h3');
     timeline.from(node, 0.3, { display: 'none', autoAlpha: 1, delay }).to(node, 1, { display: 'block', autoAlpha: 1 });
     timeline.staggerFrom(texts, 0.3, {autoAlpha: 0}, 0.15)
     timeline.from(images, 0.3, {autoAlpha: 0, y: 10, ease: Power3.easeOut})
@@ -37,7 +37,7 @@ export const play = (pathname, node, appears) => {
     let timeline;
     if (pathname === '/') timeline = getHomeTimeline(node, delay);
     else timeline = getDefaultTimeline(node, delay);
-    const texts = node.querySelectorAll('h3 a');
+    let texts = node.querySelectorAll('h3 a');
     for (var i = 0; i < texts.length; i++) {
         texts[i].addEventListener('click', mouseMove.bind(this, texts, i));
     }
@@ -48,10 +48,12 @@ export const exit = (pathname, node) => {
     const timeline = new Timeline({ paused: true });
     let images = node.querySelectorAll('.container-images .container-images-single');
     let home = node.querySelector('.js-home');
-    const h1 = node.querySelector('h1');
+    let cursor = node.querySelector('.js-cursor');
+    let h1 = node.querySelector('h1');
     let imageName = node.querySelector('.container-images .image-name');
     if (pathname === "/") {
-        timeline.to(images, 1, { autoAlpha: 0, ease: Power1.easeOut }, 1)
+        timeline.to(cursor, 0.1, {autoAlpha: 0})
+        timeline.to(images, 0.6, { y: 15, autoAlpha: 0, ease: Power1.easeOut }, 0.5)
 
     } else{
         timeline.to(images, 0.2, { autoAlpha: 0, ease: Power1.easeIn })
