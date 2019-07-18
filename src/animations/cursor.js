@@ -6,7 +6,6 @@ export default class Cursor {
         this.init();
     }
     init() {
-        console.log(this.container)
         this.navigation = this.container.querySelector('.js-navigation');
         this.cursor = this.container.querySelector('.js-cursor');
         this.images = this.container.querySelectorAll('.container-images img');
