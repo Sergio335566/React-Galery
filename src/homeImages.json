@@ -6,7 +6,7 @@
   },
   {
      "id": "2",
-     "url": "./arthur/img_17.jpg",
+     "url": "./agathe/img_17.jpg",
      "dataName": "GRAIN"
   },
   {
@@ -16,7 +16,7 @@
   },
   {
      "id": "4",
-     "url": "./sekou/img_4.jpg",
+     "url": "./agathe/img_4.jpg",
      "dataName": "GRAIN"
   },
   {
@@ -37,6 +37,21 @@
   {
      "id": "8",
      "url": "./arthur/img_9.jpg",
+     "dataName": "GRAIN"
+  },
+  {
+     "id": "9",
+     "url": "./agathe/img_9.jpg",
+     "dataName": "GRAIN"
+  },
+  {
+     "id": "10",
+     "url": "./arthur/img_14.jpg",
+     "dataName": "GRAIN"
+  },
+  {
+     "id": "10",
+     "url": "./jonah/img_11.jpg",
      "dataName": "GRAIN"
   }
 ]
