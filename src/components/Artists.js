@@ -12,7 +12,7 @@ export default class Artists extends Component {
         const { artists } = this.props;
         const pathToAssets = require.context('../images/');
         return (
-            <div ref='jscontainer' className="container js-container">
+            <div ref='jscontainer' className="container js-container-artists">
                 <div className="content">
                    <div className="content--inner">
                        <div className="navigation js-navigation">

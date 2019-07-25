@@ -3,7 +3,6 @@ export default class Cursor {
     constructor(containerEl, pathName) {
         this.container = containerEl;
         this.pathname = pathName;
-        console.log(this.container)
         this.init();
     }
     init() {
@@ -12,6 +11,7 @@ export default class Cursor {
         this.images = this.container.querySelectorAll('.container-images img');
         this.imageName = this.container.querySelector('.js-image-name h2');
         this.home = this.container.querySelector('.js-home');
+        this.about = this.container.querySelector('.js-about')
         this.nameContainer = this.container.querySelector('.js-names');
         this.leftContainer = this.navigation.querySelector('.js-left');
         this.rightContainer = this.navigation.querySelector('.js-right');
@@ -26,6 +26,8 @@ export default class Cursor {
         if (!this.correctPathName) {
             this.home.addEventListener('mouseenter', this.textHover.bind(this));
             this.home.addEventListener('mouseleave', this.textHover.bind(this));
+            this.about.addEventListener('mouseenter', this.textHover.bind(this));
+            this.about.addEventListener('mouseleave', this.textHover.bind(this));
         } else {
             this.nameContainer.addEventListener('mouseenter', this.textHover.bind(this));
             this.nameContainer.addEventListener('mouseleave', this.textHover.bind(this));

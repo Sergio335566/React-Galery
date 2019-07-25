@@ -1,75 +1,98 @@
-import { TimelineMax as Timeline, Power1, Power3 } from 'gsap';
-
-const getDefaultTimeline = (node, delay) => {
-    const timeline = new Timeline({ paused: true });
-    const content = node.querySelector('.content');
-    let h1 = node.querySelector('h1');
-    let images = node.querySelectorAll('.container-images .container-images-single');
-    let imageName = node.querySelector('.container-images .image-name');
-    let home = node.querySelector('.js-home');
-    let contentInner = node.querySelector('.content--inner');
-
-    if (content && contentInner) {
+import { TimelineMax as Timeline, Power1, Power2, Power3 } from 'gsap';
+export default class Animation {
+    getAboutTimeline(delay) {
+        var timeline = new Timeline({ paused: true });
+        this.backGalery = this.container.querySelector('.js-galery');
+        this.artistDescription = this.container.querySelectorAll('.js-description p span');
+        timeline.from(this.container, 0.3, { display: 'none', autoAlpha: 1, delay: this.delay }).to(this.container, 1, { display: 'block', autoAlpha: 1 });
         timeline
-            .to(h1, 0.4, {display: 'block', autoAlpha: 1})
-            .from(node, 0.1, { display: 'none', delay, ease: Power1.easeIn })
-            .from(content, 0.15, { autoAlpha: 1, ease: Power1.easeInOut })
-            .from(contentInner, 0.15, { autoAlpha: 1, ease: Power1.easeIn })
-            .from(home, 0.4, {display: 'none', autoAlpha: 0})
-            .from(images, 0.4, { autoAlpha: 0, ease: Power1.easeIn })
-            .from(imageName, 0.3, { y: 35, autoAlpha: 0, ease: Power3.easeOut })
+            .from(this.home, 0.4, {autoAlpha: 0})
+            .from(this.backGalery, 0.4, {autoAlpha: 0})
+            .staggerFrom(this.artistDescription, 0.5, {autoAlpha: 0}, 0.3)
+        return timeline;
     }
-    return timeline;
-};
-
-const getHomeTimeline = (node, delay) => {
-    const timeline = new Timeline({ paused: false });
-    let images = node.querySelectorAll('.container-images .container-images-single');
-    let texts = node.querySelectorAll('h3');
-    timeline.from(node, 0.3, { display: 'none', autoAlpha: 1, delay }).to(node, 1, { display: 'block', autoAlpha: 1 });
-    timeline.staggerFrom(texts, 0.3, {autoAlpha: 0}, 0.15)
-    timeline.from(images, 0.3, {autoAlpha: 0, y: 10, ease: Power3.easeOut})
-    return timeline;
-};
-
-export const play = (pathname, node, appears) => {
-    const delay = appears ? 0 : 1;
-    let timeline;
-    if (pathname === '/') timeline = getHomeTimeline(node, delay);
-    else timeline = getDefaultTimeline(node, delay);
-    let texts = node.querySelectorAll('h3 a');
-    for (var i = 0; i < texts.length; i++) {
-        texts[i].addEventListener('click', mouseMove.bind(this, texts, i));
+    getProjectTimeline(delay){
+        var timeline = new Timeline({ paused: true });
+        if (this.content && this.contentInner) {
+            timeline
+                .to(this.h1, 0.4, {display: 'block', autoAlpha: 1})
+                .from(this.container, 0.1, { display: 'none', delay: this.delay, ease: Power1.easeIn })
+                .from(this.content, 0.15, { autoAlpha: 1, ease: Power1.easeInOut })
+                .from(this.contentInner, 0.15, { autoAlpha: 1, ease: Power1.easeIn })
+                .from(this.home, 0.4, {display: 'none', autoAlpha: 0})
+                .from(this.images, 0.4, { autoAlpha: 0, ease: Power1.easeIn })
+                .from(this.imageName, 0.3, { y: 35, autoAlpha: 0, ease: Power3.easeOut })
+        }
+        return timeline;
     }
-    window.loadPromise.then(() => requestAnimationFrame(() => timeline.play()));
-};
 
-export const exit = (pathname, node) => {
-    const timeline = new Timeline({ paused: true });
-    let images = node.querySelectorAll('.container-images .container-images-single');
-    let home = node.querySelector('.js-home');
-    let cursor = node.querySelector('.js-cursor');
-    let h1 = node.querySelector('h1');
-    let imageName = node.querySelector('.container-images .image-name');
-    if (pathname === "/") {
-        timeline.to(cursor, 0.1, {autoAlpha: 0})
-        timeline.to(images, 0.6, { y: 15, autoAlpha: 0, ease: Power1.easeOut }, 0.5)
-
-    } else{
-        timeline.to(images, 0.2, { autoAlpha: 0, ease: Power1.easeIn })
-                .to(home, 0.4, { autoAlpha: 0})
-                .to(imageName, 0.3, { y: 35, autoAlpha: 0, ease: Power3.easeOut })
-                .to(h1, 0.3, {y: -35, autoAlpha: 0, ease: Power3.easeOut })
+    getHomeTimeline(delay){
+        var timeline = new Timeline({ paused: false });
+        timeline.from(this.container, 0.3, { display: 'none', autoAlpha: 1, delay: this.delay }).to(this.container, 1, { display: 'block', autoAlpha: 1 });
+        timeline.staggerFrom(this.texts, 0.3, {autoAlpha: 0}, 0.15)
+        timeline.from(this.images, 0.3, {autoAlpha: 0, y: 10, ease: Power3.easeOut})
+        return timeline;
     }
-    timeline.to(node, 0.5, {autoAlpha: 0, ease: Power1.easeOut}, 2)
-    timeline.play();
-};
 
-const mouseMove = (texts, i, title) => {
-    const timeline = new Timeline();
-    timeline
-        .to(texts, 0.1, {autoAlpha: 0})
-        .to(texts, 0.2, {position: 'absolute'})
-        .to(texts[i], 0.7, {position: 'absolute', autoAlpha: 1, display: "block", x: '-50%', left:'50%', ease: Power1.easeOut})
-        .to(texts[i], 0.3, {x: '-50%', ease: Power3.easeIn })
+    play(pathname, node, appears){
+        this.container = node;
+        this.images = this.container.querySelectorAll('.container-images .container-images-single');
+        this.imageName = this.container.querySelector('.container-images .image-name');
+        this.texts = this.container.querySelectorAll('h3 a');
+        this.content = this.container.querySelector('.content');
+        this.contentInner = this.container.querySelector('.content--inner');
+        this.h1 = this.container.querySelector('h1');
+        this.home = this.container.querySelector('.js-home');
+        this.cursor = this.container.querySelector('.js-cursor')
+        this.about = this.container.querySelector('.js-about');
+        this.delay = appears ? 0 : 1;
+        this.containerName = this.container.classList[1];
+        var timeline;
+        if (this.containerName === 'js-container-artists'){
+            timeline = this.getHomeTimeline()
+        }
+        else if(this.containerName === 'js-container-singleArtist') {
+            timeline = this.getProjectTimeline()
+        }
+        else if(this.containerName === 'js-container-about') {
+            timeline = this.getAboutTimeline()
+        }
+        for (var i = 0; i < this.texts.length; i++) {
+            this.texts[i].addEventListener('click', this.clickTitle.bind(this, i));
+        }
+        window.loadPromise.then(() => requestAnimationFrame(() => timeline.play()));
+    }
+
+    exit(){
+        var timeline = new Timeline({ paused: true });
+        if (this.containerName === 'js-container-artists') {
+            timeline.to(this.cursor, 0.1, {autoAlpha: 0}).to(this.images, 0.6, { y: 15, autoAlpha: 0, ease: Power1.easeOut }, 0.5)
+        }
+        else if(this.containerName === 'js-container-singleArtist') {
+            timeline.to(this.images, 0.2, { autoAlpha: 0, ease: Power1.easeIn }).to(this.home, 0.4, { autoAlpha: 0}).to(this.imageName, 0.3, { y: 35, autoAlpha: 0, ease: Power3.easeOut }).to(this.h1, 0.3, {y: -35, autoAlpha: 0, ease: Power3.easeOut })
+        }
+        else if(this.containerName === 'js-container-about') {
+            timeline.to(this.home, 0.4, {autoAlpha: 0})
+                    .to(this.backGalery, 0.4, {autoAlpha: 0})
+                    .staggerTo(this.artistDescription, 0.5, {autoAlpha: 0}, 0.3)
+        }
+        timeline.to(this.container, 0.5, {autoAlpha: 0, ease: Power1.easeOut}, 2)
+        timeline.play();
+    }
+
+    clickTitle(i){
+        var timeline = new Timeline();
+        var timeline2 = new Timeline();
+        this.texts[i].classList.add('clicked')
+        console.log(this.texts)
+        for (var i = 0; i < this.texts.length; i++) {
+            if (this.texts[i].classList.contains('clicked')) {
+                timeline
+                .to(this.texts[i], 0.6, {position: 'absolute', autoAlpha: 1, display: "block", x: '-50%', left:'50%', ease: Power2.easeOut, delay: 0.8})
+            } else {
+                timeline2
+                    .to(this.texts[i], 0.2, {y: '-5%', autoAlpha: 0, ease: Power3.easeIn})
+            }
+        }
+    }
 }
