@@ -19,7 +19,7 @@ export default class Artists extends Component {
                            <div className="navigation-left js-left"></div>
                            <div className="navigation-right js-right"></div>
                         </div>
-                        <div className="container-names js-names">
+                        <div className="container-names js-names js-hover">
                             { Object.values(artists).map((artist, i)=> {
                                 return (
                                     <h3 key={i}><NavLink to={`/${i}`}>{artist.name}</NavLink></h3>

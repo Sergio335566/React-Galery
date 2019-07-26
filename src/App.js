@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Switch, BrowserRouter, Route } from 'react-router-dom'
 import { Transition, TransitionGroup } from 'react-transition-group';
-import Animation from './timelines';
+import Animation from './animations/animations';
 import Artists from './components/Artists';
 import SingleArtist from './components/SingleArtist';
 import About from './components/About'

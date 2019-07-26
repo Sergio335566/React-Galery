@@ -9,6 +9,7 @@ export default class Animation {
             .from(this.home, 0.4, {autoAlpha: 0})
             .from(this.backGalery, 0.4, {autoAlpha: 0})
             .staggerFrom(this.artistDescription, 0.5, {autoAlpha: 0}, 0.3)
+            .from(this.social, 0.4, {autoAlpha: 0})
         return timeline;
     }
     getProjectTimeline(delay){
@@ -20,6 +21,7 @@ export default class Animation {
                 .from(this.content, 0.15, { autoAlpha: 1, ease: Power1.easeInOut })
                 .from(this.contentInner, 0.15, { autoAlpha: 1, ease: Power1.easeIn })
                 .from(this.home, 0.4, {display: 'none', autoAlpha: 0})
+                .from(this.about, 0.4, {autoAlpha: 0})
                 .from(this.images, 0.4, { autoAlpha: 0, ease: Power1.easeIn })
                 .from(this.imageName, 0.3, { y: 35, autoAlpha: 0, ease: Power3.easeOut })
         }
@@ -45,6 +47,7 @@ export default class Animation {
         this.home = this.container.querySelector('.js-home');
         this.cursor = this.container.querySelector('.js-cursor')
         this.about = this.container.querySelector('.js-about');
+        this.social = this.container.querySelector('.js-social')
         this.delay = appears ? 0 : 1;
         this.containerName = this.container.classList[1];
         var timeline;
@@ -69,12 +72,13 @@ export default class Animation {
             timeline.to(this.cursor, 0.1, {autoAlpha: 0}).to(this.images, 0.6, { y: 15, autoAlpha: 0, ease: Power1.easeOut }, 0.5)
         }
         else if(this.containerName === 'js-container-singleArtist') {
-            timeline.to(this.images, 0.2, { autoAlpha: 0, ease: Power1.easeIn }).to(this.home, 0.4, { autoAlpha: 0}).to(this.imageName, 0.3, { y: 35, autoAlpha: 0, ease: Power3.easeOut }).to(this.h1, 0.3, {y: -35, autoAlpha: 0, ease: Power3.easeOut })
+            timeline.to(this.images, 0.2, { autoAlpha: 0, ease: Power1.easeIn }).to(this.home, 0.2, { autoAlpha: 0}).to(this.imageName, 0.2, { y: 35, autoAlpha: 0, ease: Power3.easeOut }).to(this.h1, 0.2, {y: -35, autoAlpha: 0, ease: Power3.easeOut }).to(this.about, 0.2, {autoAlpha: 0})
         }
         else if(this.containerName === 'js-container-about') {
-            timeline.to(this.home, 0.4, {autoAlpha: 0})
-                    .to(this.backGalery, 0.4, {autoAlpha: 0})
-                    .staggerTo(this.artistDescription, 0.5, {autoAlpha: 0}, 0.3)
+            timeline.to(this.home, 0.2, {autoAlpha: 0})
+                    .to(this.backGalery, 0.2, {autoAlpha: 0})
+                    .staggerTo(this.artistDescription, 0.2, {autoAlpha: 0}, 0.3)
+                    .to(this.social, 0.2, {autoAlpha: 0})
         }
         timeline.to(this.container, 0.5, {autoAlpha: 0, ease: Power1.easeOut}, 2)
         timeline.play();

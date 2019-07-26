@@ -9,6 +9,8 @@
     top: 2%
     user-select: none
     z-index: 99
+    @media screen and (max-width: 720px)
+        display: none
     &.hidden
         display: none
 
@@ -28,9 +30,14 @@
         letter-spacing: 0.2px
     .social
         display: flex
-        text-align: center
+        justify-content: center
+        padding-top: 20px
+        position: absolute
+        width: 100%
         .instagram, .email
-            width: 50%
+            width: 25%
+            @media screen and (max-width: 720px)
+                width: 45%
             a
                 color: inherit
                 font-family: "Akzidenz"
@@ -38,7 +45,11 @@
                 text-decoration: none
 .surnom
     span
-        left: 50%
+        font-size: 3rem
+        left: 35%
+        opacity: 0.1
         position: absolute
         top: 50%
         user-select: none
+        @media screen and (max-width: 720px)
+            display: none

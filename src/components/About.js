@@ -11,8 +11,8 @@ export default class About extends Component {
         const artist = artists[match.params.id];
         return (
             <div ref="jscontainer"className="container js-container-about">
-                <div className="home js-home"><NavLink to={`/`}>home</NavLink></div>
-                <div className="about js-galery"><NavLink to={`/${artist.id}`}>back to galery</NavLink></div>
+                <div className="home js-home js-hover"><NavLink to={`/`}>home</NavLink></div>
+                <div className="about js-galery js-hover"><NavLink to={`/${artist.id}`}>back to galery</NavLink></div>
                 <div className="content">
                    <div className="content--inner">
                        <div className="container-name">
@@ -25,9 +25,9 @@ export default class About extends Component {
                                 return <span key={key}>{item}<br/></span>
                             })}
                             </p>
-                            <div className="social">
-                                <div className="instagram"><a href={artist.instagram} target="_blank">instagram</a></div>
-                                <div className="email"><a href={artist.email} target="_blank">email</a></div>
+                            <div className="social js-social">
+                                <div className="instagram js-hover"><a href={artist.instagram} target="_blank">instagram</a></div>
+                                <div className="email js-hover"><a href={`mailto:${artist.email}`}>email</a></div>
                             </div>
                         </div>
                    </div>

@@ -2,6 +2,7 @@ import { TweenMax, TimelineMax as Timeline } from 'gsap';
 export default class Name {
     constructor(containerEl, pathName) {
         this.container = containerEl;
+        this.hover = this.container.querySelectorAll('.js-hover');
         this.name = this.container.querySelector('.artist-name');
         this.home = this.container.querySelector('.js-home');
         this.backGalery = this.container.querySelector('.js-galery');
@@ -9,11 +10,11 @@ export default class Name {
         this.initListeners();
     }
     initListeners() {
+        for (var i = 0; i < this.hover.length; i++) {
+            this.hover[i].addEventListener('mouseenter', this.textHover.bind(this));
+            this.hover[i].addEventListener('mouseleave', this.textHover.bind(this));
+        }
         this.container.addEventListener('mousemove', this.nameMove.bind(this));
-        this.home.addEventListener('mouseenter', this.textHover.bind(this));
-        this.home.addEventListener('mouseleave', this.textHover.bind(this));
-        this.backGalery.addEventListener('mouseenter', this.textHover.bind(this));
-        this.backGalery.addEventListener('mouseleave', this.textHover.bind(this));
         this.container.addEventListener('click', this.addName.bind(this));
         this.clicked = 0;
     }

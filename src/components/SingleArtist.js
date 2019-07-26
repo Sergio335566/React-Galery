@@ -14,8 +14,8 @@ export default class SingleArtist extends Component {
         return (
 
             <div ref='jscontainer' className="container js-container-singleArtist">
-                <div className="home js-home"><NavLink to={`/`}>home</NavLink></div>
-                <div className="about js-about"><NavLink to={`/${artist.id}/about`}>about</NavLink></div>
+                <div className="home js-home js-hover"><NavLink to={`/`}>home</NavLink></div>
+                <div className="about js-about js-hover"><NavLink to={`/${artist.id}/about`}>about</NavLink></div>
                 <div className="content">
                    <div className="content--inner">
                        <div className="container-name">

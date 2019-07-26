@@ -11,10 +11,11 @@ export default class Cursor {
         this.images = this.container.querySelectorAll('.container-images img');
         this.imageName = this.container.querySelector('.js-image-name h2');
         this.home = this.container.querySelector('.js-home');
-        this.about = this.container.querySelector('.js-about')
+        this.about = this.container.querySelector('.js-about');
         this.nameContainer = this.container.querySelector('.js-names');
         this.leftContainer = this.navigation.querySelector('.js-left');
         this.rightContainer = this.navigation.querySelector('.js-right');
+        this.hover = this.container.querySelectorAll('.js-hover');
         this.indexLength = this.images.length;
         this.correctPathName = this.pathname === '/';
         this.index = 0;
@@ -23,14 +24,9 @@ export default class Cursor {
         this.initListeners();
     }
     initListeners() {
-        if (!this.correctPathName) {
-            this.home.addEventListener('mouseenter', this.textHover.bind(this));
-            this.home.addEventListener('mouseleave', this.textHover.bind(this));
-            this.about.addEventListener('mouseenter', this.textHover.bind(this));
-            this.about.addEventListener('mouseleave', this.textHover.bind(this));
-        } else {
-            this.nameContainer.addEventListener('mouseenter', this.textHover.bind(this));
-            this.nameContainer.addEventListener('mouseleave', this.textHover.bind(this));
+        for (var i = 0; i < this.hover.length; i++) {
+            this.hover[i].addEventListener('mouseenter', this.textHover.bind(this));
+            this.hover[i].addEventListener('mouseleave', this.textHover.bind(this));
         }
         this.container.addEventListener('mousemove', this.cursorMove.bind(this));
         this.leftContainer.addEventListener('mousemove', this.nextCursor.bind(this, false));
